@@ -22,6 +22,7 @@
 - **Late delivery goes with bad reviews.** 46% of late orders get a 1-star review, against 7% of on-time orders. This is an association, not proof that lateness causes low scores.
 - **A few categories carry the sales.** The top 10 of 74 product categories make up 62% of product sales. Among them, `bed_bath_table` has the most orders but the lowest average review (3.97 vs 4.09 overall).
 - **A small group of sellers drives the marketplace.** The top 20% of sellers make about 83% of product sales, and 130 of 3,095 sellers make half.
+- **Lateness is uneven.** Late rates range from 2.9% (RO) to 23.9% (AL), with the Northeast worst, and orders that cross state lines are late 9.2% of the time vs 6.0% within a state. Sellers with higher late rates tend to have lower reviews (correlation -0.50 across 425 sellers); this is an association, not proof of cause.
 - **Few customers return.** Only about 2.2% of customers (2,070 of 96,096) came back at least a day after their first order. A simple count of customers with 2+ orders gives 3.1%, but about 31% of those "repeat" customers reordered within a day, which looks like one purchase split into two orders rather than a return visit.
 - **Returning customers spend more, but are too few to drive revenue.** They spend about R$329 each against R$163 for one-time customers, yet make up only 2.2% of customers and 4.4% of revenue.
 
@@ -71,7 +72,8 @@ ecommerce/
 ├── notebooks/
 │   ├── 01_business_analysis.ipynb    # delivery, reviews, categories, sellers
 │   ├── 02_customer_analysis.ipynb    # repeat customers and customer value
-│   └── 03_delivery_prediction.ipynb  # planned: late-delivery model
+│   ├── 03_delivery_failure.ipynb     # where delivery fails: states and sellers
+│   └── 04_delivery_prediction.ipynb  # planned: late-delivery model
 ├── scripts/download_data.py          # reproducible data download
 ├── docs/                             # ER diagram and project specification
 ├── images/                           # charts used in this README
@@ -107,6 +109,7 @@ Then open `notebooks/01_business_analysis.ipynb` and run all cells, or run `sql/
 - [x] SQL business analysis (13 questions)
 - [x] Python analysis: delivery, reviews, categories, seller concentration
 - [x] Customer analysis: repeat and returning customers
+- [x] Delivery failure analysis: late rates by state and seller
 - [x] Customer value: RFM table, returning vs one-time customers (full RFM scoring skipped: 97.8% of customers buy on only one day)
 - [ ] Tableau executive dashboard
 - [ ] Late-delivery classification model (using only information known before delivery)
